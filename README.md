@@ -6,11 +6,12 @@ and the work we are planning. A pre-recording will be streamed during
 the three [Community and More][comm] panels, with live Q&A following
 the screening of all five lightning talks comprising the session.
 
-To view the slides, please open [hpc-carpentry.html] in your browser;
-press "P" to toggle presenter mode.
+To view the slides, please open [hpc-carpentry.html](hpc-carpentry.html)
+in your browser; press "P" to toggle presenter mode.
 
-This presentation was written and recorded by members of the HPC Carpentry
-Steering Committee:
+This presentation was written and recorded by Trevor Keller on behalf of the
+HPC Carpentry community. The members involved in CarpentryCon'22 session
+preparations are
 
 - Trevor Keller ([@tkphd][tkphd]), [NIST][nist], *presenter*
 - Andrew Reid ([@reida][reida]), [NIST][nist]
@@ -38,9 +39,8 @@ Please cite this talk as follows:
   title  = {An Introduction to HPC Carpentry},
   date   = {2022-08-07},
   url    = {https://github.com/hpc-workshops/carpentrycon-lightning-talk},
-  note   = {Slides for a lightning talk delivered by Trevor Keller 
-            of the National Institute of Standards and Technology at
-            CarpentryCon 2022 (Online).}
+  note   = {Slides for a lightning talk written and recorded by Trevor Keller 
+            for CarpentryCon 2022 (Online).}
 }
 ```
 
