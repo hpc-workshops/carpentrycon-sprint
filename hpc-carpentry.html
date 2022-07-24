@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<!--
+ This is a <a href="https://github.com/gnab/remark">remark</a>
+ presentation: plain Markdown with an HTML wrapper. Each "slide"
+ begins with "---"; presenter notes for each slide begin with "???"
+ and are not rendered. To see the finished presentation, please visit
+ https://carpentries-incubator.github.io/hpc-intro/files/jargon.html
+-->
+<html>
+  <head>
+    <title>An Introduction to HPC Carpentry</title>
+    <link href="fig/favicon.png" rel="icon" type="image/png"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 65%;
+      }
+      .tall {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 35%;
+      }
+      div.hpc-head {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 50px;
+        width: 100%;
+        text-align: left;
+      }
+      div.hpc-foot {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        height: 20px;
+        width: 100%;
+      }
+      div.hpc-foot span {
+        font-size: 10pt;
+        position: absolute;
+        left: 15px;
+        bottom: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle
+
+# An Introduction to
+
+.logo[
+  ![High Performance Carpentry Banner](fig/hpc-carpentry.svg)
+]
+
+Trevor Keller (NIST)
+
+<small><em>on behalf of the</em></small>  
+HPC<sup>❦</sup> Carpentry<sup>‡</sup> Community
+
+[hpc-carpentry.org][hpc-web]
+
+<small>
+  <sup>❦</sup> HPC = High-Performance Computing  
+  <sup>‡</sup> Not an offical Carpentries lesson program  
+  <em>Logo design:</em> Mumtahinah Sristy (BRAC)
+</small>
+
+???
+
+Greetings, CarpentryCon!
+
+My name is Trevor Keller, and I'm presenting this Introduction to High
+Performance Computing Carpentry, a community effort in The Carpentries
+tradition but not yet under the official umbrella.
+
+---
+class: center, middle
+
+<div class="hpc-head">
+  <img src="fig/hpc-logo.png" alt="HPC Carpentry logo" style="height: 100%;"/>
+</div>
+
+# What is _High Performance Computing_ ?
+
+???
+
+What is High Performance Computing ?
+
+---
+<div class="hpc-head">
+  <img src="fig/hpc-logo.png" alt="HPC Carpentry logo" style="height: 100%;"/>
+</div>
+
+## Your Computer
+
+.center[
+  ![Standalone computers (banana for scale)](fig/jargon_standalone.svg)
+]
+
+* Private: user at the keyboard expects sole use of the machine
+* Flexible: easy to install software or reconfigure for new tasks
+* Responsive: open any program and immediately start using it
+
+???
+
+Whether your computer has one account or many, when your hands are on the
+keyboard and mouse, you are in control of the machine. It's easy to install new
+software, upgrade or remove existing programs, and even swap hardware in or out
+to suit your needs. When you launch a program, it starts immediately. The
+output is displayed on-screen, often with an option to save your work. If a
+program is slow, you can halt competing programs to try making it faster.
+
+---
+<div class="hpc-head">
+  <img src="fig/hpc-logo.png" alt="HPC Carpentry logo" style="height: 100%;"/>
+</div>
+
+## Working with Computer Clusters
+
+.center[
+  ![Schematic HPC workflow](fig/jargon_workflow.png)
+]
+
+* Remote: you connect over the Internet to the cluster _gateway_, which handles
+  authentication and file transfers
+
+* Queued: you submit a _job_ to the _scheduler_, which sets your program to
+  launch as soon as adequate resources come available on one or more computers
+
+* Shared: many jobs run simultaneously on the cluster, and each of its
+  computers runs many different programs at once
+
+???
+
+While your computer may have high-performance components, "HPC" usually refers
+to clusters of computers. Clusters are inherently shared resources: each
+computer runs many programs at once, on behalf of several different users, and
+large programs are distributed across several computers to break up the load.
+
+From your computer, you access a cluster over the Internet through a gateway
+computer. Rather than launching your program directly, you must request an
+allocation of processors, memory and time. A scheduler will determine whether
+one or several computers can satisfy your request, and the soonest time slot
+when the resources are expected to become available. If nobody else is using
+those computers, your program will launch immediately. Otherwise, it enters a
+queue and will launch as soon as the computers have finished running other
+users' jobs.
+
+---
+class: center, middle
+
+<div class="hpc-head">
+  <img src="fig/hpc-logo.png" alt="HPC Carpentry logo" style="height: 100%;"/>
+</div>
+
+# Introducing HPC Carpentry
+
+???
+
+So let's talk about HPC Carpentry!
+
+---
+<div class="hpc-head">
+  <img src="fig/hpc-logo.png" alt="HPC Carpentry logo" style="height: 100%;"/>
+</div>
+
+## Why "HPC Carpentry"?
+
+* High performance computing is accessible at most institutions: clusters are
+  built from off-the-shelf computer hardware
+
+* Interacting with a remote HPC resource is not intuitive, and as apps and
+  cloud platforms spread, it is becoming even less approachable
+
+* Excellent training materials, documentation, and experts are out there, but
+  access to HPC education has not kept pace with demand
+
+* The Carpentries' approach — live, hands-on instruction, with artifacts that
+  still work afterwards — has proven remarkably effective at both education
+  and community building
+
+.center[
+  ![Schematic HPC workflow](fig/connect-to-remote.svg)
+]
+
+???
+
+Why HPC Carpentry?
+
+Over the decades, the cost of building a high-performance computing cluster has
+fallen: they are, after all, built from regular computer hardware. Most
+academic and research institutions have at least one, with access readily
+granted to research groups and students. Training materials, documentation, and
+expert knowledge have also grown, but access to this knowledge has not scaled
+nearly as well as the hardware.
+
+The HPC Carpentry community grew as administrators and practitioners sought to
+guide users through this gap and develop a training program that could be
+reused by others. The Carpentries' approach to hands-on instruction builds
+muscle memory and leaves learners with high-quality code after the workshop.
+Lessons from established Carpentries curricula in related domains provide an
+excellent foundation for us to build on.
+
+---
+<div class="hpc-head"> <img src="fig/hpc-logo.png" alt="HPC Carpentry logo"
+  style="height: 100%;"/> </div>
+
+## The HPC Carpentry Community
+
+* Started in 2016 & 2017 by Peter Steinbach (Max Planck &#127465;&#127466;),
+  Jeff Stafford, John Simpson, Alex Razoumov (ComputeCanada
+  &#127464;&#127462;), and others
+
+* Our __vision__ is to be the leading inclusive community teaching data and
+  coding skills for HPC resources.
+  
+* Our __mission__ is to lower the barrier to entry to HPC operations for a wide
+  range of users, so that more people can benefit from the increasing
+  availability of increasingly sophisticated computer systems.
+
+* Our __strategy__ to achieve this goal is to develop and aggregate educational
+  resources and work closely with like-minded communities.
+
+* Our Steering Committee, elected annually, is
+  
+  * Alan O'Cais — CECAM, Spain &#127466;&#127480;
+  * Andrew Reid — NIST, USA &#127482;&#127480;
+  * Annajiat Alim Rasel — BracU, Bangladesh &#127463;&#127465;
+  * Rohit Goswami — Quansight & U. Iceland &#127470;&#127480;
+  * Trevor Keller — NIST, USA &#127482;&#127480;
+  * Wirawan Purwanto — ODU, USA &#127482;&#127480;
+
+???
+
+The HPC Carpentry Community was created by Peter Steinbach in 2016, with a lot of
+early contributions from people at ComputeCanada. We have met online twice a
+month since summer of 2019 to coordinate lesson development efforts and grow
+the community, with strong representation from around the globe.
+
+Our vision is to be the leading inclusive community teaching data and
+coding skills for HPC resources.
+
+Our mission is to lower the barrier to entry to HPC operations for a wide
+range of users, so that more people can benefit from the increasing
+availability of increasingly sophisticated computer systems.
+
+Our strategy to achieve this goal is to develop and aggregate educational
+resources and work closely with like-minded communities.
+
+Our Steering Committee seats six members elected in the Spring each year
+following an asynchronous, GitHub-based democratic process. The geographic
+diversity of the committee reflects the global nature of our efforts.
+
+---
+<div class="hpc-head">
+  <img src="fig/hpc-logo.png" alt="HPC Carpentry logo" style="height: 100%;"/>
+</div>
+
+## Lesson Programs
+
+A workshop for novice HPC users comprises the following lessons:
+
+* [The Unix Shell][shell-novice] from Software Carpentry (prerequisite)
+
+  Novice command-line users learn how to navigate the filesystem, copy and move
+  files and directories, write loops, and create simple shell scripts.
+
+* [Introduction to High-Performance Computing][hpc-intro]
+
+  Novice HPC users connect to their cluster, find out what resources are
+  available, write a job script, monitor jobs in the queue, and retrieve output
+  data when jobs finish.
+
+* [High-Performance Computing Workflows with Snakemake][hpc-workflows]
+
+  HPC users practice interacting with the scheduler, and learn how to build
+  a repeatable workflow to generate and analyze data on the cluster.
+
+A follow-up workshop can introduce the learners to more advanced topics on
+writing or optimizing parallel software:
+
+* [HPC Parallelisation For Novices][hpc-parallel]
+* [Running LAMMPS on HPC systems][hpc-lammps]
+* [Introduction to High-Performance Computing with Chapel][hpc-chapel]
+
+???
+
+Most interactions with the cluster are made through the command line, so the
+lesson on UNIX Shell from Software Carpentries is a prerequisite for all our
+lessons. In fact, we recommend teaching it as the first lesson in an HPC
+Carpentry workshop for novice users. With a strong foundation on the command
+line, learners can then connect to their cluster, find out how many computers
+there are and whether any are available, write and submit their first job
+scripts, then retrieve output data when their program finishes. Following these
+fundamental interactions, these HPC users can learn how to manage dependencies
+between data generation and analysis on the cluster, write an automated
+workflow script, and use it to learn how much performance a program gains for
+each additional processor they throw at it.
+
+Instructors can offer follow-up lessons and workshops to cover topics in
+parallel programming and performance optimization. We currently have lessons
+using the Python and Chapel programming languages, as well as the popular
+molecular dynamics software, LAMMPS. As we develop more advanced lessons, it
+will become easier to stack these modules together to customize a workshop to
+meet your learners exactly where their skills and interests intersect.
+
+---
+class: center, middle
+<div class="hpc-head">
+  <img src="fig/hpc-logo.png" alt="HPC Carpentry logo" style="height: 100%;"/>
+</div>
+
+# Thank You!
+
+[github.com/hpc-carpentry][hpc-git]
+
+slack: [#hpc-carpentry][swc-slack]
+
+_Notable contributors to HPC Carpentry:_
+
+Peter Steinbach (Helmholtz &#127465;&#127466;)  
+John Simpson (ComputeCanada &#127464;&#127462;)  
+Jeff Stafford (ComputeCanada &#127464;&#127462;)  
+Alex Razoumov (ComputeCanada &#127464;&#127462;)  
+Andy Turner (EPCC &#127468;&#127463;)  
+Christina Koch (U. Wisc-Madison &#127482;&#127480;)  
+Tracy Teal (Carpentries &#127482;&#127480;)  
+Bob Freeman (Harvard &#127482;&#127480;)  
+Chris Bording (U. Western Australia &#127462;&#127482;)  
+Daniel Smith (MolSSI &#127482;&#127480;)  
+Benson Muite (Kichakato Kizito &#127472;&#127466;)  
+Mike Renfro (U. Tennessee &#127482;&#127480;)  
+Toby Hodges (Carpentries &#127465;&#127466;)  
+Megan Guidry (NeSI &#127475;&#127487;)  
+Rhys Kerley (U. Tennessee &#127482;&#127480;)
+
+???
+
+Thank you for your interest in HPC Carpentry! Please join our community
+on GitHub or The Carpentries' Slack channel. We are actively developing the
+lesson on Workflows, and would love to have your help.
+
+That's all for now. Enjoy the rest of CarpentryCon!
+
+<!-- links -->
+
+[hpc-intro]: https://github.com/carpentries-incubator/hpc-intro
+[hpc-shell]: https://github.com/hpc-carpentry/hpc-shell
+[hpc-workflows]: https://github.com/carpentries-incubator/hpc-workflows
+
+[hpc-parallel]: https://github.com/hpc-carpentry/hpc-parallel-novice
+[hpc-lammps]: https://github.com/hpc-carpentry/tuning_lammps
+[hpc-chapel]: https://github.com/hpc-carpentry/hpc-chapel
+
+[hpc-martha]: https://github.com/hpc-carpentry/coordination/issues/28
+
+[hpc-web]: https://www.hpc-carpentry.org
+[hpc-git]: https://github.com/hpc-carpentry
+[hpc-twit]: https://twitter.com/hpccarpentry
+
+[swc-slack]: https://swcarpentry.slack.com/
+[shell-novice]: https://github.com/swcarpentry/shell-novice
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
