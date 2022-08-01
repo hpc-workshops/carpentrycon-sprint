@@ -1,16 +1,13 @@
 # An Introduction to HPC Carpentry
 
 This repository contains a [remark.js][rmrk] slide deck used to
-present the [CarpentryCon'22][cc22] lightning talk outlining HPC Carpentry
-and the work we are planning. A pre-recording will be streamed during
-the three [Community and More][comm] panels, with live Q&A following
-the screening of all five lightning talks comprising the session.
+introduce the [CarpentryCon'22][cc22] sprint for the HPC Carpentry lesson
+[HPC Workflows with Snakemake](https://github.com/carpentries-incubator/hpc-workflows).
 
 To view the slides, please open [hpc-carpentry.html](hpc-carpentry.html)
 in your browser; press "P" to toggle presenter mode.
 
-This presentation was written and recorded by Trevor Keller on behalf of the
-HPC Carpentry community. The members involved in CarpentryCon'22 session
+The members involved in CarpentryCon'22 session
 preparations are
 
 - Trevor Keller ([@tkphd][tkphd]), [NIST][nist], *presenter*
@@ -28,7 +25,7 @@ preparations are
 Please cite this talk as follows:
 
 ``` bibtex
-@Online{keller2022,
+@Online{ocaisa2022,
   author = {Keller, Trevor and
             Reid, Andrew and 
             O'Cais, Alan and 
@@ -36,11 +33,11 @@ Please cite this talk as follows:
             Alim Rasel, Annajiat and 
             Purwanto, Wirawan and
             Goswami, Rohit},
-  title  = {An Introduction to HPC Carpentry},
-  date   = {2022-08-07},
-  url    = {https://github.com/hpc-workshops/carpentrycon-lightning-talk},
-  note   = {Slides for a lightning talk written and recorded by Trevor Keller 
-            for CarpentryCon 2022 (Online).}
+  title  = {Introduction to HPC Carpentry sprint for "HPC Workflows with Snakemake"},
+  date   = {2022-08-01},
+  url    = {https://github.com/hpc-workshops/carpentrycon-sprint},
+  note   = {Introductory slides for lesson sprint for "HPC Workflows with Snakemake" 
+            at CarpentryCon 2022 (Online).}
 }
 ```
 
