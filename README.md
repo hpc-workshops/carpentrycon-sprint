@@ -4,8 +4,9 @@ This repository contains a [remark.js][rmrk] slide deck used to
 introduce the [CarpentryCon'22][cc22] sprint for the HPC Carpentry lesson
 [HPC Workflows with Snakemake](https://github.com/carpentries-incubator/hpc-workflows).
 
-To view the slides, please open [hpc-carpentry.html](hpc-carpentry.html)
-in your browser; press "P" to toggle presenter mode.
+To view the slides, please open the
+[webpage associated with this lesson](https://hpc-workshops.github.io/carpentrycon-sprint)
+; press "P" to toggle presenter mode.
 
 The members involved in CarpentryCon'22 session
 preparations are
